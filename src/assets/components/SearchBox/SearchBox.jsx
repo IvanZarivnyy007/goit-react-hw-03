@@ -1,11 +1,11 @@
-const SearchBox = ({ handleChange, imputValue }) => {
+const SearchBox = ({ handleChange, inputValue }) => {
   return (
     <div className="searchbox-container">
       <p className="searchbox-title">Find contacts by name</p>
       <input
         className="searchbox-input"
         type="text"
-        value={imputValue}
+        value={inputValue}
         onChange={handleChange}
       />
     </div>

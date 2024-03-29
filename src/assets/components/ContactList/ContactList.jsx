@@ -3,7 +3,6 @@ import { FaUser } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 
 const ContactList = ({ contacts }) => {
-  console.log(contacts);
   return (
     <div className="contact-div">
       <ul className="contact-ul">
