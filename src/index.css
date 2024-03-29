@@ -110,3 +110,90 @@ button:focus-visible {
 .button-Add-contact:hover {
   background-color: #0056b3;
 }
+
+/* ------------------------------------------ */
+.contact-div {
+}
+
+.contact-ul {
+}
+.contact-div-li {
+}
+
+.contact-li {
+}
+
+.button-contact {
+}
+
+.contact-div {
+  margin: 20px;
+  margin-top: 50px;
+}
+
+.contact-ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-div-li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.contact-li {
+  margin: 0;
+}
+
+.contact-name {
+  margin-right: 3px;
+  color: lightcoral;
+}
+.contact-number {
+  margin-right: 32px;
+  color: mediumblue;
+}
+
+.button-contact {
+  background-color: #007bff;
+  color: white;
+  border: search none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button-contact:hover {
+  background-color: #d32f2f;
+}
+
+/* ---------------------------------- */
+
+.searchbox-container {
+  margin-bottom: 20px;
+}
+
+.searchbox-title {
+  font-size: 23px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  color: #242424;
+}
+
+.searchbox-input {
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.searchbox-input:focus {
+  outline: none;
+  border-color: #007bff;
+}

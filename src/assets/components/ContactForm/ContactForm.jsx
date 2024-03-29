@@ -10,9 +10,15 @@ const ContactForm = () => {
   const nameId = useId();
   const numberId = useId();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // onSubmit(e.target.elements.contacts.value);
+    e.target.reset();
+  };
+
   return (
     <Formik initialValues={initialValues}>
-      <Form className="form">
+      <Form onSubmit={handleSubmit} className="form">
         <div className="container">
           <div className="div-name">
             <label htmlFor={nameId}>Name</label>
