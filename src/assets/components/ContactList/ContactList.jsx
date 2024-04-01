@@ -2,7 +2,7 @@
 import { FaUser } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, removeContact }) => {
   return (
     <div className="contact-div">
       <ul className="contact-ul">
@@ -16,7 +16,11 @@ const ContactList = ({ contacts }) => {
               {"  "}
               <span className="contact-number">{contact.number}</span>
             </li>
-            <button className="button-contact" type="button">
+            <button
+              className="button-contact"
+              type="button"
+              onClick={() => removeContact(contact.id)}
+            >
               Delete
             </button>
           </div>

@@ -1,30 +1,50 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
+import * as Yup from "yup";
 
 const initialValues = {
   username: " ",
   number: " ",
 };
 
-const ContactForm = () => {
+const validationSchema = Yup.object().shape({
+  username: Yup.string()
+    .min(3, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  number: Yup.number()
+    .min(3, "Too short")
+    .max(50, "Too long")
+    .required("Required"),
+});
+
+const ContactForm = ({ addContact }) => {
   const nameId = useId();
   const numberId = useId();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // onSubmit(e.target.elements.contacts.value);
-    e.target.reset();
-  };
+  function handleSubmit(values, actions) {
+    const item = {
+      id: Date.now(),
+      ...values,
+    };
+    addContact(item);
+    actions.resetForm();
+  }
 
   return (
-    <Formik initialValues={initialValues}>
+    <Formik initialValues={initialValues} validationSchema={validationSchema}>
       <Form onSubmit={handleSubmit} className="form">
         <div className="container">
           <div className="div-name">
             <label htmlFor={nameId}>Name</label>
             <Field className="input" type="text" name="username" id={nameId} />
 
-            <ErrorMessage name="username" as="span" />
+            <ErrorMessage
+              name="username"
+              as="span"
+              component="p"
+              className="error-message"
+            />
           </div>
 
           <div className="div-number">
@@ -32,11 +52,16 @@ const ContactForm = () => {
             <Field
               className="input"
               type="number"
-              name="Number"
+              name="number"
               id={numberId}
             />
 
-            <ErrorMessage name="number" as="span" />
+            <ErrorMessage
+              name="number"
+              as="span"
+              component="p"
+              className="error-message"
+            />
           </div>
           <button className="button-Add-contact" type="submit">
             Add contact
