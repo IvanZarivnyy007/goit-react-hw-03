@@ -13,7 +13,7 @@ const validationSchema = Yup.object().shape({
     .max(50, "Too Long!")
     .required("Required"),
   number: Yup.number()
-    .min(3, "Too short")
+    .min(2, "Too short")
     .max(50, "Too long")
     .required("Required"),
 });
@@ -32,8 +32,12 @@ const ContactForm = ({ addContact }) => {
   }
 
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema}>
-      <Form onSubmit={handleSubmit} className="form">
+    <Formik
+      onSubmit={handleSubmit}
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+    >
+      <Form className="form">
         <div className="container">
           <div className="div-name">
             <label htmlFor={nameId}>Name</label>
@@ -63,7 +67,11 @@ const ContactForm = ({ addContact }) => {
               className="error-message"
             />
           </div>
-          <button className="button-Add-contact" type="submit">
+          <button
+            className="button-Add-contact"
+            type="submit"
+            onSubmit={handleSubmit}
+          >
             Add contact
           </button>
         </div>
