@@ -3,16 +3,16 @@ import { useId } from "react";
 import * as Yup from "yup";
 
 const initialValues = {
-  username: " ",
+  name: " ",
   number: " ",
 };
 
 const validationSchema = Yup.object().shape({
-  username: Yup.string()
+  name: Yup.string()
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  number: Yup.number()
+  number: Yup.string()
     .min(2, "Too short")
     .max(50, "Too long")
     .required("Required"),
@@ -41,10 +41,10 @@ const ContactForm = ({ addContact }) => {
         <div className="container">
           <div className="div-name">
             <label htmlFor={nameId}>Name</label>
-            <Field className="input" type="text" name="username" id={nameId} />
+            <Field className="input" type="text" name="name" id={nameId} />
 
             <ErrorMessage
-              name="username"
+              name="name"
               as="span"
               component="p"
               className="error-message"
