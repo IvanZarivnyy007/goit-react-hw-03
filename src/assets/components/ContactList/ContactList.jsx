@@ -1,29 +1,19 @@
-// import Contact from "../Contact/Contact";
-import { FaUser } from "react-icons/fa";
-import { FaPhoneAlt } from "react-icons/fa";
+import Contact from "../Contact/Contact";
 
-const ContactList = ({ contacts, removeContact }) => {
+
+const ContactList = ({ contacts , removeContact}) => {
   return (
     <div className="contact-div">
       <ul className="contact-ul">
         {contacts.map((contact) => (
-          <div className="contact-div-li" key={contact.id}>
-            <li className="contact-li">
-              <FaUser />
-              {"  "}
-              <span className="contact-name">{contact.name}</span> <br />
-              <FaPhoneAlt />
-              {"  "}
-              <span className="contact-number">{contact.number}</span>
-            </li>
-            <button
-              className="button-contact"
-              type="button"
-              onClick={() => removeContact(contact.id)}
-            >
-              Delete
-            </button>
-          </div>
+          
+          <>
+            <Contact id={contact.id}
+              name={contact.name}
+              number={contact.number}
+              removeContact={removeContact}/>
+            </>
+          
         ))}
       </ul>
     </div>
@@ -31,3 +21,6 @@ const ContactList = ({ contacts, removeContact }) => {
 };
 
 export default ContactList;
+
+
+

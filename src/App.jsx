@@ -1,6 +1,7 @@
 import ContactForm from "./assets/components/ContactForm/ContactForm";
 import SearchBox from "./assets/components/SearchBox/SearchBox";
 import ContactList from "./assets/components/ContactList/ContactList";
+
 import "./App.css";
 import { useState, useEffect } from "react";
 
@@ -48,8 +49,8 @@ function App() {
         <h1>Phonebook</h1>
         <ContactForm addContact={addContact} />
         <SearchBox handleChange={handleChange} imputValue={inputValue} />
-        <ContactList contacts={visibleContacts} removeContact={removeContact} />
-        {/* <Contact /> */}
+        <ContactList contacts ={visibleContacts}  removeContact={removeContact} />
+
       </div>
     </>
   );

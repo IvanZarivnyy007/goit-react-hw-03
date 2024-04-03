@@ -1,10 +1,27 @@
-// const Contacts = () => {
-//   const contacts = [
-//     { id: "id-1", name: "Rosie Simpson", number: "459-12-56" },
-//     { id: "id-2", name: "Hermione Kline", number: "443-89-12" },
-//     { id: "id-3", name: "Eden Clements", number: "645-17-79" },
-//     { id: "id-4", name: "Annie Copeland", number: "227-91-26" },
-//   ];
-// };
+import { FaUser } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 
-// export default Contacts;
+const Contact = (  { id, name, number, removeContact }) => {
+    return (
+      <div className="contact-div-li" key={id}>
+        <li className="contact-li">
+          <FaUser />
+          {"  "}
+          <span className="contact-name">{name}</span> <br />
+          <FaPhoneAlt />
+          {"  "}
+          <span className="contact-number">{number}</span>
+        </li>
+        <button
+          className="button-contact"
+          type="button"
+          onClick={() => removeContact(id)}
+        >
+          Delete
+        </button>
+      </div>
+    );
+  };
+  
+  export default Contact;
+  
