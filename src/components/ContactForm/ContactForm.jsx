@@ -3,8 +3,8 @@ import { useId } from "react";
 import * as Yup from "yup";
 
 const initialValues = {
-  name: " ",
-  number: " ",
+  name: "",
+  number: "",
 };
 
 const validationSchema = Yup.object().shape({
